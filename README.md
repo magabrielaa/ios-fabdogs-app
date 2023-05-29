@@ -8,4 +8,4 @@ The Map View displays a pin over the coordinates of the selected breed's origins
 
 Here's a GIF showing my custom feature:
 
-<img src="https://github.com/MPCS-51039/ios-project-magabrielaa/blob/ios-custom-feature/app.gif" width="400" height="800" />
+<img src="https://github.com/magabrielaa/ios-fabdogs-app/blob/4-map-view/app.gif" width="400" height="800" />
