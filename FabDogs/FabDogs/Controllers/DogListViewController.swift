@@ -20,19 +20,48 @@ class DogListViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.dogService = DogService()
-        self.dogService.getDogs(completion: { dogs, error in
-            guard let dogs = dogs, error == nil else {
-                return
-                
-            }
-            self.myDogs = dogs
-            self.tableView.reloadData()
-            
-        })
-        
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        fetchDogs()
+    }
+    
+        
+    func fetchDogs () {
+            guard let confirmedService = self.dogService else { return }
+
+            confirmedService.getDogs(completion: { dogs, error in
+                guard let dogs = dogs, error == nil else {
+                    DispatchQueue.main.async {
+                    // Alert Controller when getDogs returns nil due to API call failure
+                        let alert = UIAlertController(title: "Error", message: "Failed to fetch dogs", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+                                // Remove all cached responses
+                                URLCache.shared.removeAllCachedResponses()
+                                // Reset to empty array
+                                self.myDogs = []
+                                // Reload tableView
+                                self.tableView.reloadData()
+                            }))
+                            alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
+                                // If Retry is selected, call the fetch function again
+                                self.fetchDogs()
+                            }))
+
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    return
+                }
+                self.myDogs = dogs
+                self.tableView.reloadData()
+            })
+        }
+
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
@@ -52,21 +81,30 @@ class DogListViewController: UIViewController {
 extension DogListViewController: UITableViewDataSource{
     // MARK: DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.myDogs.count
+        
+        // If myDogs array is empty, return 1 cell to display a message that alerts the
+        // user of this event.
+        // Otherwise, return as many cells as there are dogs in the array
+        return self.myDogs.isEmpty ? 1 : self.myDogs.count
     }
     
     // Create each cell in the tableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // (1) get cell
-        let cell = self.tableView.dequeueReusableCell(withIdentifier:"dogCell") as! DogCell // force downcast
-        
-        // 2) put data in the cell
-        let currentDog = self.myDogs[indexPath.row]
-        cell.dog = currentDog
-        
-        // 3) return cell for iOS to display
-        return cell
+        if self.myDogs.isEmpty {
+            let cell = UITableViewCell()
+            cell.textLabel?.text = "There are currently no dogs"
+            return cell
+        } else {
+            // (1) get cell
+            let cell = self.tableView.dequeueReusableCell(withIdentifier:"dogCell") as! DogCell // force downcast
+            
+            // 2) put data in the cell
+            let currentDog = self.myDogs[indexPath.row]
+            cell.dog = currentDog
+            
+            // 3) return cell for iOS to display
+            return cell
+        }
     }
 }
 

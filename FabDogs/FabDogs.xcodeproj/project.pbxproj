@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C03FB05029EE5D2A006948CD /* DogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB04F29EE5D2A006948CD /* DogTest.swift */; };
+		C086BDEE29EF4FE500496BA3 /* DogListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C086BDED29EF4FE500496BA3 /* DogListViewControllerTests.swift */; };
+		C0A2F80729EE6E0C00FD9AEB /* DogServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A2F80629EE6E0C00FD9AEB /* DogServiceTests.swift */; };
 		C0B24AE029E47FE600BF5CBD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B24ADF29E47FE600BF5CBD /* DetailViewController.swift */; };
 		C0C4247729DFD7B600330BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4247629DFD7B600330BA9 /* AppDelegate.swift */; };
 		C0C4247929DFD7B600330BA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4247829DFD7B600330BA9 /* SceneDelegate.swift */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C03FB04F29EE5D2A006948CD /* DogTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTest.swift; sourceTree = "<group>"; };
+		C086BDED29EF4FE500496BA3 /* DogListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListViewControllerTests.swift; sourceTree = "<group>"; };
+		C0A2F80629EE6E0C00FD9AEB /* DogServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogServiceTests.swift; sourceTree = "<group>"; };
 		C0B24ADF29E47FE600BF5CBD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C0C4247329DFD7B600330BA9 /* FabDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FabDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C4247629DFD7B600330BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				C0C4249029DFD7B800330BA9 /* FabDogsTests.swift */,
+				C03FB04F29EE5D2A006948CD /* DogTest.swift */,
+				C0A2F80629EE6E0C00FD9AEB /* DogServiceTests.swift */,
+				C086BDED29EF4FE500496BA3 /* DogListViewControllerTests.swift */,
 			);
 			path = FabDogsTests;
 			sourceTree = "<group>";
@@ -312,6 +321,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03FB05029EE5D2A006948CD /* DogTest.swift in Sources */,
+				C0A2F80729EE6E0C00FD9AEB /* DogServiceTests.swift in Sources */,
+				C086BDEE29EF4FE500496BA3 /* DogListViewControllerTests.swift in Sources */,
 				C0C4249129DFD7B800330BA9 /* FabDogsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

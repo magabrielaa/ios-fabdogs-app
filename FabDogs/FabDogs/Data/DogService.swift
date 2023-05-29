@@ -11,10 +11,13 @@ enum DogCallingError: Error {
     case problemGeneratingURL
     case problemGettingDataFromAPI
     case problemDecodingData
+    case emptyData
 }
 
 class DogService {
     private let urlString = "https://run.mocky.io/v3/0371b6d0-898e-4c4b-accb-9f561fe441ca"
+    // Empty list of dogs for testing purposes:
+    // private let urlString =  "https://run.mocky.io/v3/f2d700b2-d7da-4f3c-a12a-aeedc5c53992"
     
     func getDogs(completion: @escaping ([Dog]?, Error?) -> ()) {
             guard let url = URL(string: self.urlString) else {
@@ -31,7 +34,11 @@ class DogService {
                 
                 do {
                     let dogResult = try JSONDecoder().decode(DogResult.self, from: data)
-                    DispatchQueue.main.async { completion(dogResult.dogs, nil) }
+                    if dogResult.dogs.isEmpty {
+                        DispatchQueue.main.async { completion([], DogCallingError.emptyData) }
+                    } else {
+                        DispatchQueue.main.async { completion(dogResult.dogs, nil) }
+                    }
                 } catch (let error) {
                     print(error)
                     DispatchQueue.main.async { completion(nil, DogCallingError.problemDecodingData) }

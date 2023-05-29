@@ -23,11 +23,12 @@ class DogCell: UITableViewCell {
             
             DispatchQueue.global(qos: .userInitiated).async {
                 // Cast imageUrl string into a URL object, pass it to NSData which turns into data
-                let dogImageData = NSData(contentsOf: URL(string: self.dog!.imageUrl)!)
-                DispatchQueue.main.async {
-                    // Pass data into a UIImage intializer to set on Image View
-                    self.dogImageView.image = UIImage(data: dogImageData! as Data)
-                    self.dogImageView.layer.cornerRadius = self.dogImageView.frame.width / 2
+                if let dogImageData = NSData(contentsOf: URL(string: self.dog!.imageUrl)!) {
+                    DispatchQueue.main.async {
+                        // Pass data into a UIImage intializer to set on Image View
+                        self.dogImageView.image = UIImage(data: dogImageData as Data)
+                        self.dogImageView.layer.cornerRadius = self.dogImageView.frame.width / 2
+                    }
                 }
             }
         }

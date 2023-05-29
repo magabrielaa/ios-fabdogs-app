@@ -23,34 +23,24 @@ class DetailViewController: UIViewController {
     
     // Once view is loaded, it is available for communications
     override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        if let dog = self.dog {
-            self.dogNameLabel.text = dog.name
-            self.dogPersonalityLabel.text = dog.personality
-            self.dogActivityLabel.text = dog.activity
             
-            DispatchQueue.global(qos: .userInitiated).async {
-                let dogImageData = NSData(contentsOf: URL(string: dog.imageUrl)!)
-                DispatchQueue.main.async {
-                    self.dogImageView.image = UIImage(data: dogImageData! as Data)
-                    self.dogImageView.layer.cornerRadius = self.dogImageView.frame.width / 2
+            super.viewDidLoad()
+            // Do any additional setup after loading the view.
+            
+            if let dog = self.dog {
+                self.dogNameLabel.text = dog.name
+                self.dogPersonalityLabel.text = dog.personality
+                self.dogActivityLabel.text = dog.activity
+                
+                DispatchQueue.global(qos: .userInitiated).async {
+                    if let dogImageData = NSData(contentsOf: URL(string: dog.imageUrl)!){
+                        DispatchQueue.main.async {
+                            self.dogImageView.image = UIImage(data: dogImageData as Data)
+                            self.dogImageView.layer.cornerRadius = self.dogImageView.frame.width / 2
+                        }
+                    }
                 }
             }
+
         }
-
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
