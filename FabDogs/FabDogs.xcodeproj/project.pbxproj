@@ -7,18 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C035557F2A0C819B008BB63E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C035557E2A0C819B008BB63E /* MapViewController.swift */; };
-		C03FB05029EE5D2A006948CD /* DogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB04F29EE5D2A006948CD /* DogTest.swift */; };
-		C03FC5152A16A68800051B00 /* SkillsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FC5142A16A68800051B00 /* SkillsListViewController.swift */; };
-		C03FC5172A16D3EF00051B00 /* SkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FC5162A16D3EF00051B00 /* SkillsCell.swift */; };
-		C03FC5192A16D9E100051B00 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FC5182A16D9E100051B00 /* Skills.swift */; };
-		C03FC51B2A16E31A00051B00 /* SkillService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FC51A2A16E31A00051B00 /* SkillService.swift */; };
-		C04AE2282A11782000D6A668 /* FavoriteDogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04AE2272A11782000D6A668 /* FavoriteDogCell.swift */; };
-		C06E04F72A0F133F0005353B /* DogSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E04F62A0F133F0005353B /* DogSkillsViewController.swift */; };
-		C06E04F92A0F15CD0005353B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E04F82A0F15CD0005353B /* FavoritesViewController.swift */; };
-		C086BDEE29EF4FE500496BA3 /* DogListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C086BDED29EF4FE500496BA3 /* DogListViewControllerTests.swift */; };
-		C0A2F80729EE6E0C00FD9AEB /* DogServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A2F80629EE6E0C00FD9AEB /* DogServiceTests.swift */; };
-		C0B24AE029E47FE600BF5CBD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B24ADF29E47FE600BF5CBD /* DetailViewController.swift */; };
 		C0C4247729DFD7B600330BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4247629DFD7B600330BA9 /* AppDelegate.swift */; };
 		C0C4247929DFD7B600330BA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4247829DFD7B600330BA9 /* SceneDelegate.swift */; };
 		C0C4247B29DFD7B600330BA9 /* DogListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4247A29DFD7B600330BA9 /* DogListViewController.swift */; };
@@ -52,18 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C035557E2A0C819B008BB63E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		C03FB04F29EE5D2A006948CD /* DogTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTest.swift; sourceTree = "<group>"; };
-		C03FC5142A16A68800051B00 /* SkillsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListViewController.swift; sourceTree = "<group>"; };
-		C03FC5162A16D3EF00051B00 /* SkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsCell.swift; sourceTree = "<group>"; };
-		C03FC5182A16D9E100051B00 /* Skills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
-		C03FC51A2A16E31A00051B00 /* SkillService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillService.swift; sourceTree = "<group>"; };
-		C04AE2272A11782000D6A668 /* FavoriteDogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDogCell.swift; sourceTree = "<group>"; };
-		C06E04F62A0F133F0005353B /* DogSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSkillsViewController.swift; sourceTree = "<group>"; };
-		C06E04F82A0F15CD0005353B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		C086BDED29EF4FE500496BA3 /* DogListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListViewControllerTests.swift; sourceTree = "<group>"; };
-		C0A2F80629EE6E0C00FD9AEB /* DogServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogServiceTests.swift; sourceTree = "<group>"; };
-		C0B24ADF29E47FE600BF5CBD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C0C4247329DFD7B600330BA9 /* FabDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FabDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C4247629DFD7B600330BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0C4247829DFD7B600330BA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,9 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				C0C4249029DFD7B800330BA9 /* FabDogsTests.swift */,
-				C03FB04F29EE5D2A006948CD /* DogTest.swift */,
-				C0A2F80629EE6E0C00FD9AEB /* DogServiceTests.swift */,
-				C086BDED29EF4FE500496BA3 /* DogListViewControllerTests.swift */,
 			);
 			path = FabDogsTests;
 			sourceTree = "<group>";
@@ -169,8 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				C0C424A929DFE72E00330BA9 /* DogCell.swift */,
-				C04AE2272A11782000D6A668 /* FavoriteDogCell.swift */,
-				C03FC5162A16D3EF00051B00 /* SkillsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,11 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				C0C4247A29DFD7B600330BA9 /* DogListViewController.swift */,
-				C0B24ADF29E47FE600BF5CBD /* DetailViewController.swift */,
-				C035557E2A0C819B008BB63E /* MapViewController.swift */,
-				C06E04F62A0F133F0005353B /* DogSkillsViewController.swift */,
-				C06E04F82A0F15CD0005353B /* FavoritesViewController.swift */,
-				C03FC5142A16A68800051B00 /* SkillsListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,8 +159,6 @@
 			children = (
 				C0C424AB29DFEABE00330BA9 /* Dog.swift */,
 				C0C424AD29DFEADE00330BA9 /* DogService.swift */,
-				C03FC5182A16D9E100051B00 /* Skills.swift */,
-				C03FC51A2A16E31A00051B00 /* SkillService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -330,22 +294,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C03FC5152A16A68800051B00 /* SkillsListViewController.swift in Sources */,
 				C0C424AE29DFEADE00330BA9 /* DogService.swift in Sources */,
 				C0C4247B29DFD7B600330BA9 /* DogListViewController.swift in Sources */,
-				C04AE2282A11782000D6A668 /* FavoriteDogCell.swift in Sources */,
 				C0C4247729DFD7B600330BA9 /* AppDelegate.swift in Sources */,
 				C0C424AC29DFEABE00330BA9 /* Dog.swift in Sources */,
-				C035557F2A0C819B008BB63E /* MapViewController.swift in Sources */,
-				C03FC5172A16D3EF00051B00 /* SkillsCell.swift in Sources */,
 				C0C4248129DFD7B600330BA9 /* FabDogs.xcdatamodeld in Sources */,
-				C06E04F92A0F15CD0005353B /* FavoritesViewController.swift in Sources */,
 				C0C424AA29DFE72E00330BA9 /* DogCell.swift in Sources */,
-				C06E04F72A0F133F0005353B /* DogSkillsViewController.swift in Sources */,
 				C0C4247929DFD7B600330BA9 /* SceneDelegate.swift in Sources */,
-				C03FC51B2A16E31A00051B00 /* SkillService.swift in Sources */,
-				C03FC5192A16D9E100051B00 /* Skills.swift in Sources */,
-				C0B24AE029E47FE600BF5CBD /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,9 +308,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C03FB05029EE5D2A006948CD /* DogTest.swift in Sources */,
-				C0A2F80729EE6E0C00FD9AEB /* DogServiceTests.swift in Sources */,
-				C086BDEE29EF4FE500496BA3 /* DogListViewControllerTests.swift in Sources */,
 				C0C4249129DFD7B800330BA9 /* FabDogsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

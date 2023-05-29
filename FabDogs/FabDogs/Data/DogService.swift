@@ -7,42 +7,25 @@
 
 import Foundation
 
-enum DogCallingError: Error {
-    case problemGeneratingURL
-    case problemGettingDataFromAPI
-    case problemDecodingData
-    case emptyData
-}
-
-class DogService {
-    private let urlString = "https://run.mocky.io/v3/4419bae1-a16d-414c-b999-be6b883954d3"
+class DogService{
     
-    func getDogs(completion: @escaping ([Dog]?, Error?) -> ()) {
-            guard let url = URL(string: self.urlString) else {
-                DispatchQueue.main.async { completion(nil, DogCallingError.problemGeneratingURL) }
-                return
-        }
-                
-            let request = URLRequest(url: url)
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let data = data, error == nil else {
-                    DispatchQueue.main.async { completion(nil, DogCallingError.problemGettingDataFromAPI) }
-                    return
-                }
-                
-                do {
-                    let dogResult = try JSONDecoder().decode(DogResult.self, from: data)
-                    if dogResult.dogs.isEmpty {
-                        DispatchQueue.main.async { completion([], DogCallingError.emptyData) }
-                    } else {
-                        DispatchQueue.main.async { completion(dogResult.dogs, nil) }
-                    }
-                } catch (let error) {
-                    print(error)
-                    DispatchQueue.main.async { completion(nil, DogCallingError.problemDecodingData) }
-                }
-                                                        
-            }
-            task.resume()
-        }
+    func getDogs() -> [Dog]{
+        return [
+            Dog(named: "Ramona", personality:"Cute but will fight"),
+            Dog(named: "Tomasito", personality:"Lazy and loving"),
+            Dog(named: "Federica", personality:"Scaredy and sweet"),
+            Dog(named: "Negro", personality:"Loyal and patient"),
+            Dog(named: "Manchita", personality:"The cheekiest of all"),
+            Dog(named: "Panchita", personality:"My childhood partner"),
+            Dog(named: "Mi Amor", personality:"Small but fierce"),
+            Dog(named: "Negrita", personality:"Yearning for your love"),
+            Dog(named: "Nicky", personality:"Always a good sport"),
+            Dog(named: "Uva", personality:"Playful"),
+            Dog(named: "Abu", personality:"Stylin'"),
+            Dog(named: "Pupi", personality:"Always on the run"),
+            Dog(named: "Rufo", personality:"Just chillin'"),
+            Dog(named: "Abby", personality:"Miss congeniality"),
+            Dog(named: "Barul", personality:"Forever fetching"),
+        ]
+    }
 }
