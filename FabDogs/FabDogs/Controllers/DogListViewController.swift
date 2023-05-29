@@ -20,12 +20,32 @@ class DogListViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.dogService = DogService()
-        self.myDogs = self.dogService.getDogs()
+        self.dogService.getDogs(completion: { dogs, error in
+            guard let dogs = dogs, error == nil else {
+                return
+                
+            }
+            self.myDogs = dogs
+            self.tableView.reloadData()
+            
+        })
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            // Cast down from UIViewController to a DetailViewController
+            let destination = segue.destination as? DetailViewController,
+            let selectedIndexPath = self.tableView.indexPathForSelectedRow,
+            // Get cell located at the index path and downcast it to DogCell
+            let confirmedCell = self.tableView.cellForRow(at: selectedIndexPath) as? DogCell
+            else { return }
+
+        let confirmedDog = confirmedCell.dog
+        destination.dog = confirmedDog // destination is DetailViewController
+    }
 }
 
 // adds UITableViewDataSource functionality to ViewController class
@@ -52,16 +72,6 @@ extension DogListViewController: UITableViewDataSource{
 
 extension DogListViewController: UITableViewDelegate{
     // MARK: Delegate
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if
-            let cell = tableView.cellForRow(at: indexPath) as? DogCell,
-            let confirmedDog = cell.dog
-        {
-            confirmedDog.confirmedSighting = true
-            cell.accessoryType = confirmedDog.confirmedSighting ? .checkmark : .none
-        }
-    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
