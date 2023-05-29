@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C035557F2A0C819B008BB63E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C035557E2A0C819B008BB63E /* MapViewController.swift */; };
 		C03FB05029EE5D2A006948CD /* DogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB04F29EE5D2A006948CD /* DogTest.swift */; };
 		C086BDEE29EF4FE500496BA3 /* DogListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C086BDED29EF4FE500496BA3 /* DogListViewControllerTests.swift */; };
 		C0A2F80729EE6E0C00FD9AEB /* DogServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A2F80629EE6E0C00FD9AEB /* DogServiceTests.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C035557E2A0C819B008BB63E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C03FB04F29EE5D2A006948CD /* DogTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTest.swift; sourceTree = "<group>"; };
 		C086BDED29EF4FE500496BA3 /* DogListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListViewControllerTests.swift; sourceTree = "<group>"; };
 		C0A2F80629EE6E0C00FD9AEB /* DogServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogServiceTests.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				C0C4247A29DFD7B600330BA9 /* DogListViewController.swift */,
 				C0B24ADF29E47FE600BF5CBD /* DetailViewController.swift */,
+				C035557E2A0C819B008BB63E /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				C0C4247B29DFD7B600330BA9 /* DogListViewController.swift in Sources */,
 				C0C4247729DFD7B600330BA9 /* AppDelegate.swift in Sources */,
 				C0C424AC29DFEABE00330BA9 /* Dog.swift in Sources */,
+				C035557F2A0C819B008BB63E /* MapViewController.swift in Sources */,
 				C0C4248129DFD7B600330BA9 /* FabDogs.xcdatamodeld in Sources */,
 				C0C424AA29DFE72E00330BA9 /* DogCell.swift in Sources */,
 				C0C4247929DFD7B600330BA9 /* SceneDelegate.swift in Sources */,

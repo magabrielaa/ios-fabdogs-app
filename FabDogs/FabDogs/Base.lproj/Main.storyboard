@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,7 +39,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="awk-uD-uRz">
                                                     <rect key="frame" x="112" y="11" width="80" height="81.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqI-XC-hHe" userLabel="dogName">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqI-XC-hHe" userLabel="dogName">
                                                             <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                             <nil key="textColor"/>
@@ -47,7 +48,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwx-tZ-cSR" userLabel="dogPersonality">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwx-tZ-cSR" userLabel="dogPersonality">
                                                             <rect key="frame" x="0.0" y="49" width="80" height="32.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" systemColor="systemIndigoColor"/>
@@ -107,7 +108,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QO7-r6-Qgp">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1402.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1460"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bA4-NJ-OBa" userLabel="dogNameLabel">
                                                 <rect key="frame" x="400" y="0.0" width="224" height="107.5"/>
@@ -160,6 +161,18 @@
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="44"/>
                                                 </variation>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDt-or-yXG">
+                                                <rect key="frame" x="369" y="1412.5" width="286" height="47.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="See the breed's origin">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="28"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="Gfk-F4-tcN" kind="show" id="L4d-L8-xqW"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -211,7 +224,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yh-k3-4Jk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1484.7328244274809" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1484.1796875" y="3.5139092240117127"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Npe-9f-0dy">
+            <objects>
+                <viewController id="Gfk-F4-tcN" customClass="MapViewController" customModule="FabDogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="41e-5u-B9K">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZW-nm-DCp">
+                                <rect key="frame" x="0.0" y="58" width="1024" height="1308"/>
+                                <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hW4-c9-uTQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JZW-nm-DCp" firstAttribute="top" secondItem="41e-5u-B9K" secondAttribute="top" constant="58" id="XcN-Nk-atl"/>
+                            <constraint firstItem="JZW-nm-DCp" firstAttribute="leading" secondItem="hW4-c9-uTQ" secondAttribute="leading" id="aAo-fQ-aOn"/>
+                            <constraint firstItem="JZW-nm-DCp" firstAttribute="bottom" secondItem="hW4-c9-uTQ" secondAttribute="bottom" id="dtz-wC-nNd"/>
+                            <constraint firstItem="JZW-nm-DCp" firstAttribute="trailing" secondItem="hW4-c9-uTQ" secondAttribute="trailing" id="g4b-yC-VCR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nd3-qb-deg"/>
+                    <connections>
+                        <outlet property="mapView" destination="JZW-nm-DCp" id="ERw-aO-1vG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Llm-Ti-ZG1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188.4765625" y="3.9531478770131767"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="svG-bq-gtO">
@@ -242,7 +287,7 @@
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="Chihuahua" width="680" height="511"/>
+        <image name="Chihuahua" width="1200" height="1200"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

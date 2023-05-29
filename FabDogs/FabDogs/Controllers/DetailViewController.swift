@@ -43,4 +43,17 @@ class DetailViewController: UIViewController {
             }
 
         }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as? MapViewController {
+            destination.latitude = self.dog.lat
+            destination.longitude = self.dog.lon
+            destination.breed = self.dog.breed
+            destination.name = self.dog.name
+            destination.origin = self.dog.origin
+        }
+        
+    }
 }

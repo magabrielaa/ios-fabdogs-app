@@ -14,6 +14,7 @@ class DogListViewController: UIViewController {
     // Set to empty array in case myDogs cannot be reassigned data
     var myDogs: [Dog] = []
     var dogService: DogService!
+    var spinner = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,13 @@ class DogListViewController: UIViewController {
         self.dogService = DogService()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        self.spinner.translatesAutoresizingMaskIntoConstraints = false
+        self.spinner.startAnimating()
+        self.view.addSubview(spinner) // Add spinner as subview
+        self.spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true // Center horizontally
+        self.spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true // Center vertically
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +66,7 @@ class DogListViewController: UIViewController {
                 }
                 self.myDogs = dogs
                 self.tableView.reloadData()
+                self.spinner.stopAnimating() // Stop spinner animation
             })
         }
 

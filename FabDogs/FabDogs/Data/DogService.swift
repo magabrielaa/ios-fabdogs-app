@@ -15,9 +15,7 @@ enum DogCallingError: Error {
 }
 
 class DogService {
-    private let urlString = "https://run.mocky.io/v3/0371b6d0-898e-4c4b-accb-9f561fe441ca"
-    // Empty list of dogs for testing purposes:
-    // private let urlString =  "https://run.mocky.io/v3/f2d700b2-d7da-4f3c-a12a-aeedc5c53992"
+    private let urlString = "https://run.mocky.io/v3/a47562d4-8a0b-4eaf-a050-8ac15f43896f"
     
     func getDogs(completion: @escaping ([Dog]?, Error?) -> ()) {
             guard let url = URL(string: self.urlString) else {
